@@ -34,7 +34,7 @@
   <script>
     function login() {
       var username = $("#usernameinput").val();
-      window.location = "/havediscord?discord=" + encodeURIComponent(Sha256.hash(username + "jwauth"))
+      window.location = "/havediscord?discord=" + username
     }
   </script>
 </body>
