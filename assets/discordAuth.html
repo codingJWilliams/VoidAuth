@@ -18,8 +18,9 @@
       </div>
       <!-- /.logo -->
       <div class="controls">
-        <input type="text" name="username" id="usernameinput2" placeholder="Username" class="form-control" disabled/>
-        <input type="password" name="password" id="usernameinput" placeholder="Password" class="form-control" />
+        <h4 style="color:white">Discord auth</h4>
+        <p style="color:white">Check your Discord DM's for a code. Once you recieve it, type it into the box below.</p>
+        <input type="text" name="password" id="usernameinput" placeholder="2FA Code" class="form-control" />
         <button type="button" class="btn btn-default btn-block btn-custom" onclick="login()">Login</button>
       </div>
       <!-- /.controls -->
@@ -31,12 +32,9 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="/login.js"></script>
   <script>
-    $.get("/usernamecookie", function (data) {
-      $("#usernameinput2").val(data)
-    })
     function login() {
       var username = $("#usernameinput").val();
-      window.location = "/havepassword?password=" + encodeURIComponent(Sha256.hash(username + "jwauth"))
+      window.location = "/havediscord?discord=" + encodeURIComponent(Sha256.hash(username + "jwauth"))
     }
   </script>
 </body>

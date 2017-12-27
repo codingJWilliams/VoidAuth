@@ -20,9 +20,12 @@
   },
   "homepage": "https://github.com/codingJWilliams/JW-Centro#readme",
   "dependencies": {
+    "axios": "^0.17.1",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.1.0",
+    "phonetic": "^0.1.1",
     "socket.io": "^2.0.4"
   }
 }

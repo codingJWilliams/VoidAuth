@@ -4,6 +4,15 @@
     "name": "Jay Williams",
     "permissions": [
       "*"
-    ]
+    ],
+    "type": "standard"
+  },
+  "void": {
+    "name": "Jay Williams",
+    "permissions": [
+      "*"
+    ],
+    "type": "discord",
+    "did": "193053876692189184"
   }
 }
