@@ -41,6 +41,7 @@ app.get("/havepassword", (req, res) => {
   var user = usernamefile[req.session.username];
   user.username = req.session.username
   user.logintime = Date.now();
+  delete user.password
   var token = jwt.sign(user, privatekey, {
     algorithm: "RS256",
     issuer: "JW-Centro"
