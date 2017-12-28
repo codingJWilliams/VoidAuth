@@ -10,9 +10,25 @@
   "void": {
     "name": "Jay Williams",
     "permissions": [
-      "*"
+      "nightborn.panel.*"
     ],
     "type": "discord",
     "did": "193053876692189184"
+  },
+  "eddie": {
+    "name": "Eddie",
+    "permissions": [
+      "nightborn.panel.*"
+    ],
+    "type": "discord",
+    "did": "126760526473723904"
+  },
+  "hooks": {
+    "name": "Hooks",
+    "permissions": [
+      "nightborn.panel.*"
+    ],
+    "type": "discord",
+    "did": "180751533883916288"
   }
 }
