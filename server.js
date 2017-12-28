@@ -22,6 +22,23 @@ app.use(session({
 app.get("/usernamecookie", (req, res) => {
   res.end(req.session.username)
 })
+app.post("/hook", (req, res) => {
+  var { exec } = require('child_process');
+  exec('git pull', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  exec('cat *.js bad_file | wc -l', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  console.log(`stdout: ${stdout}`);
+  console.log(`stderr: ${stderr}`);
+});
+});
+})
 app.get('/requestauth', (req, res) => {
   req.session.redirect = req.query.redirect;
   console.log(req.session);
