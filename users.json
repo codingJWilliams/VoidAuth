@@ -2,33 +2,55 @@
   "jay": {
     "password": "abfd6136819e7810799f7119fc33cbc9aa6b638046d720d18867f62d44a46c1e",
     "name": "Jay Williams",
-    "permissions": [
-      "*"
-    ],
+    "permissions": ["*"],
     "type": "standard"
   },
   "void": {
     "name": "Jay Williams",
-    "permissions": [
-      "nightborn.panel.*"
-    ],
+    "permissions": ["nightborn.panel.*"],
     "type": "discord",
     "did": "193053876692189184"
   },
   "eddie": {
     "name": "Eddie",
-    "permissions": [
-      "nightborn.panel.*"
-    ],
+    "permissions": ["nightborn.panel.*"],
     "type": "discord",
     "did": "126760526473723904"
   },
   "hooks": {
     "name": "Hooks",
-    "permissions": [
-      "nightborn.panel.*"
-    ],
+    "permissions": ["nightborn.panel.*"],
     "type": "discord",
     "did": "180751533883916288"
+  },
+  "bob": {
+    "name": "Papa Glocks",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "196870559630360576"
+  },
+  "gravesbot": {
+    "name": "Gravesbot",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "165282302065115136"
+  },
+  "credimiv": {
+    "name": "Credimiv",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "110075193614954496"
+  },
+  "iridis": {
+    "name": "Sarah",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "225073635235201025"
+  },
+  "tahir": {
+    "name": "Tahir",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "197515842462810112"
   }
 }
