@@ -8,9 +8,7 @@ const crypto = require('crypto');
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const phonetic = require("phonetic");
-
 app.set('view engine', 'ejs');
-
 // Prints:
 app.use(express.static("assets"))
 app.use(session({
@@ -23,21 +21,23 @@ app.get("/usernamecookie", (req, res) => {
   res.end(req.session.username)
 })
 app.post("/hook", (req, res) => {
-  var { exec } = require('child_process');
+  var {
+    exec
+  } = require('child_process');
   exec('git pull', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  exec('cat *.js bad_file | wc -l', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
-});
-});
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    res.send("ok")
+    exec('pm2 restart centro', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      
+    });
+  });
 })
 app.get('/requestauth', (req, res) => {
   req.session.redirect = req.query.redirect;
@@ -53,7 +53,8 @@ app.get("/haveusername", (req, res) => {
   if (usernamefile[req.session.username].type === "standard") {
     res.sendFile(__dirname + "/assets/passwordAuth.html")
   } else if (usernamefile[req.session.username].type == "discord") {
-    var code = phonetic.generate().toLowerCase();
+    var code = phonetic.generate()
+      .toLowerCase();
     axios.get("http://jwte.ch:8000/2fa/" + usernamefile[req.session.username].did + "/" + code);
     req.session.code = code
     res.sendFile(__dirname + "/assets/discordAuth.html");
@@ -80,7 +81,6 @@ app.get("/havepassword", (req, res) => {
 app.get("/havediscord", (req, res) => {
   if (!req.session.redirect || req.session.username == undefined || !req.query.discord) return res.end("401: Malformed request");
   var usernamefile = JSON.parse(fs.readFileSync("./users.json"));
-
   if (req.session.code !== req.query.discord) return res.sendFile(__dirname + "/assets/incorrectdiscord.html");
   var privatekey = fs.readFileSync("private.key");
   var user = usernamefile[req.session.username];
