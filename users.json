@@ -52,5 +52,11 @@
     "permissions": ["nightborn.*"],
     "type": "discord",
     "did": "197515842462810112"
+  },
+  "angie": {
+    "name": "Angie",
+    "permissions": ["nightborn.*"],
+    "type": "discord",
+    "did": "173378944375062528"
   }
 }
