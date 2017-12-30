@@ -11,6 +11,12 @@
     "type": "discord",
     "did": "193053876692189184"
   },
+  "bells": {
+    "name": "Bells",
+    "permissions": ["nightborn.panel.*"],
+    "type": "discord",
+    "did": "102791315690901504"
+  },
   "eddie": {
     "name": "Eddie",
     "permissions": ["nightborn.panel.*"],

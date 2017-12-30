@@ -35,7 +35,6 @@ app.post("/hook", (req, res) => {
         console.error(`exec error: ${error}`);
         return;
       }
-      
     });
   });
 })
