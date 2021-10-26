@@ -91,4 +91,4 @@ app.get("/havediscord", (req, res) => {
   })
   res.redirect(req.session.redirect.replace("$token", token))
 })
-app.listen(5678, () => console.log('Example app listening on port 3000!'))
+app.listen(config.port, () => console.log('Example app listening on port 3000!'))
